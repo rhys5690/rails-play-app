@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.where(id: params[:id]).first
+  end
+
   private
 
   def post_params
