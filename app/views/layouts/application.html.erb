@@ -10,6 +10,11 @@
 
   <body>
     <div id="main" class="container">
+      <%= render 'navbar' %>
+      <% if current_user %>
+      <% else %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
