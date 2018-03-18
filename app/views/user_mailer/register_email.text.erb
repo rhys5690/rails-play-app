@@ -3,7 +3,6 @@ Welcome to our site!
 
 Enjoy your stay!
 
-<p> Copy this token: <%= @user.confirmation_token %></p>
 
 Copy the url below to confirm your email:
-<%= new_confirmation_url %>
+<%= link_to "Click to Confirm", new_auth_confirmation_url(token: @user.confirmation_token) %>
