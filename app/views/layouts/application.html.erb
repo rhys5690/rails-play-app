@@ -15,7 +15,11 @@
       <% if current_user %>
       <% else %>
       <% end %>
-
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>">
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
 </html>
