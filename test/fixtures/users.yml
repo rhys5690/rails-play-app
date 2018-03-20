@@ -3,11 +3,11 @@
 admin_user:
   name: rhys
   email: rhys5690@gmail.com
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('blahblahblah') %>
   role: 'admin'
 
-regular:
+regular_user:
   name: Normal User
   email: normal@gmail.com
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('blahblahblah') %>
   role: 'user'
