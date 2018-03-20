@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resource :confirmation, only: [:new]
   end
 
+  namespace :admin do
+    resources :posts
+  end
+
   post 'login' => 'auth/sessions#create'
   get 'login' => 'auth/sessions#new'
   delete 'logout' => 'auth/sessions#destroy'
