@@ -5,12 +5,13 @@
     <title>Wrifefully</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="admin <%= controller_name %> <%= action_name %>">
     <%= render 'navbar' %>
+    <%= yield :action_bar %>
     <div id="main" class="container">
       <% flash.each do |name, msg| %>
         <div class="alert alert-<%= name %>">
