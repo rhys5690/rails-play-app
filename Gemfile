@@ -35,6 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
 gem 'kaminari'
+gem 'stateful_enum'
 
 gem 'record_tag_helper', '~> 1.0'
 
