@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(10)
+    @posts = scoped_posts.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -39,6 +39,15 @@ class Admin::PostsController < Admin::BaseController
   end
 
   private
+
+  def scoped_posts
+    if params[:status].present?
+      Post.send(params[:status])
+    else
+      Post.all
+    end
+  end
+
   def post_params
     params.require(:post).permit(:state_event, :title, :body, :tag_ids => [])
   end
